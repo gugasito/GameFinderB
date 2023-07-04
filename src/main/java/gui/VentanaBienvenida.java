@@ -18,12 +18,12 @@ public class VentanaBienvenida extends Ventana {
         generarBotonAdministrador();
         generarBotonFiltrado();
         generarBotonSalida();
-        generarImagenFondo();
+        generarImagenFondoGrande();
     }
 
     private void generarLogo() {
         JLabel labelLogo = new JLabel();
-        labelLogo.setIcon(new ImageIcon("src/main/java/imagenes/img.png"));
+        labelLogo.setIcon(new ImageIcon("src/main/java/imagenes/GFsinFondo.png"));
         labelLogo.setBounds(275, 50, 250,250);
         this.add(labelLogo);
     }

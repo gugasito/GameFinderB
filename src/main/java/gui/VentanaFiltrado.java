@@ -27,12 +27,13 @@ public class VentanaFiltrado extends Ventana {
         generarPrecioJuego();
         generarParametroFiltrado();
         generarBotonSalida();
+        generarImagenFondoGrande();
     }
 
     private void generarParametroFiltrado() {
         String texto = "Entrada de filtrado:";
         super.generarJLabel(this.textoParametroFiltrado, texto, 100, 37, 200, 50);
-        this.parametroFiltrado = super.generarJTextField(300, 50, 200, 25);
+        this.parametroFiltrado = super.generarJTextField(300, 50, 200, 30);
         this.add(this.parametroFiltrado);
     }
 

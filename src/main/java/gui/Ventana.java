@@ -18,7 +18,7 @@ public class Ventana extends JFrame implements ActionListener {
         this.setLayout(null);
         this.fuenteTitulo = new Font("Unispace", 3, 20);
         this.fuenteTexto = new Font("Unispace", 1, 13);
-        ImageIcon icono = new ImageIcon("src/main/java/imagenes/logo.PNG");
+        ImageIcon icono = new ImageIcon("src/main/java/imagenes/GFsinFondo.png");
         super.setIconImage(icono.getImage());
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         try {
@@ -54,18 +54,27 @@ public class Ventana extends JFrame implements ActionListener {
         return lista;
     }
 
-    protected void generarImagenFondo(){
-        ImageIcon imagenFondo = new ImageIcon("src/main/java/imagenes/pexels-creative-vix-7295.jpg");
-        Image imagen = imagenFondo.getImage().getScaledInstance(800, 600, Image.SCALE_SMOOTH);
-        JLabel etiquetaFondo = new JLabel(new ImageIcon(imagen));
-        etiquetaFondo.setBounds(0, 0, 800, 600);
-        this.add(etiquetaFondo);
-    }
-
     protected JPasswordField generarJPasswordField(int posicionX, int posicionY, int largoX, int largoY) {
         JPasswordField passwordField = new JPasswordField();
         passwordField.setBounds(posicionX, posicionY, largoX, largoY);
         return passwordField;
+    }
+
+
+    protected void generarImagenFondoChica(){
+        ImageIcon imagenFondo = new ImageIcon("src/main/java/imagenes/Fondo(500 × 520 px).png");
+        Image imagen = imagenFondo.getImage().getScaledInstance(800, 600, Image.SCALE_SMOOTH);
+        JLabel etiquetaFondo = new JLabel(new ImageIcon(imagen));
+        etiquetaFondo.setBounds(0, 0, 500, 520);
+        this.add(etiquetaFondo);
+    }
+
+    protected void generarImagenFondoGrande(){
+        ImageIcon imagenFondo = new ImageIcon("src/main/java/imagenes/Fondo(800 × 600 px).png");
+        Image imagen = imagenFondo.getImage().getScaledInstance(800, 600, Image.SCALE_SMOOTH);
+        JLabel etiquetaFondo = new JLabel(new ImageIcon(imagen));
+        etiquetaFondo.setBounds(0, 0, 800, 600);
+        this.add(etiquetaFondo);
     }
 
     @Override

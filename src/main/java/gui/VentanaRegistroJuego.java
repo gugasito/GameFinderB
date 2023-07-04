@@ -27,6 +27,7 @@ public class VentanaRegistroJuego extends Ventana {
         generarGenero();
         generarDistribuidora();
         generarF2P();
+        generarImagenFondoChica();
     }
 
     public void generarF2P() {

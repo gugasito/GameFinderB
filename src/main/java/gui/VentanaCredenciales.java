@@ -23,6 +23,7 @@ public class VentanaCredenciales extends Ventana {
         generarContraseña();
         generarBotonSalida();
         generarInicioSesion();
+        generarImagenFondoChica();
     }
 
     private void generarInicioSesion() {

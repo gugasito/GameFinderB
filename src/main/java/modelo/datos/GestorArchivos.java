@@ -15,7 +15,7 @@ public class GestorArchivos {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return contador+1;
+        return contador + 1;
     }
 
     public static void registrarDato(Object objeto, String direccionArchivo) {
@@ -100,7 +100,37 @@ public class GestorArchivos {
         }
     }
 
-public static void
+    public static boolean revisarJuegos(String direccionArchivo, String nombreJuego) {
+        boolean juegoExiste = false;
+        File archivo = null;
+        FileReader Fr = null;
+        BufferedReader br = null;
+        String linea;
+        String delimiter = ", ";
+        try {
+            archivo = new File("src/main/java/modelo/datos/GameFinder.txt");
+            Fr = new FileReader(archivo.toString());
+            br = new BufferedReader(Fr);
+            while (((linea = br.readLine()) != null)) {
+                String a[] = linea.split(delimiter);
+                if (a[0].equalsIgnoreCase(nombreJuego)) {
+                    juegoExiste = true;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (null != Fr) {
+                    Fr.close();
+                }
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+        return juegoExiste;
+    }
+
 
     public static String[][] filtrarNombre(String nombre, String precio) {
         File archivo = null;
@@ -147,7 +177,8 @@ public static void
         BufferedReader br = null;
         String linea;
         String delimiter = ", ";
-        String matriz[][] = new String[contarLineas("src/main/java/modelo/datos/GameFinder.txt")][5];        int numlinea = 0;
+        String matriz[][] = new String[contarLineas("src/main/java/modelo/datos/GameFinder.txt")][5];
+        int numlinea = 0;
         try {
             archivo = new File("src/main/java/modelo/datos/GameFinder.txt");
             Fr = new FileReader(archivo.toString());

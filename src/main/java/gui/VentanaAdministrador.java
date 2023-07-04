@@ -16,6 +16,7 @@ public class VentanaAdministrador extends Ventana {
         generarBotonAñadirJuego();
         generarBotonBorrarJuego();
         generarBotonSalida();
+        generarImagenFondoGrande();
     }
 
     private void generarBotonAñadirJuego() {

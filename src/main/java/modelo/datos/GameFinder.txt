@@ -1,4 +1,4 @@
-Valorant, 2021, shooter, riot games, Gratis
+Valorant, 2021, shooter, Riot Games, Gratis
 PUBG: Battlegrounds, 2017, battle royale, Tencent, Gratis
 CrossFire, 2007, shooter, Tencent, Gratis
 Dungeon Fighter Online (DFO), 2005, mmorpg, Tencent, Gratis
@@ -9,7 +9,7 @@ Among Us, 2018, party, Innersloth, Pago
 Candy Crush Saga, 2012, logica, King, Gratis
 Tetris, 1984, puzle, Varios, Pago
 Solitario Microsoft, 1990, cartas, Microsoft, Gratis
-Crazyracing Kartrider, 2004, , Nexon, Gratis
+Crazyracing Kartrider, 2004, carreras, Nexon, Gratis
 Fortnite, 2017, battle royale, Epic Games, Gratis
 Fantasy Westward Journey, 2001, mmorpg, NetEase, Gratis
 Audition Online, 2004, musica, T3 Entertainment, Gratis

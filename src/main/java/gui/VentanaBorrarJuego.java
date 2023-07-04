@@ -24,6 +24,7 @@ public class VentanaBorrarJuego extends Ventana {
         generarBotonBorrar();
         generarBotonCancelar();
         generarNombreJuego();
+        generarImagenFondoChica();
     }
 
     public void generarNombreJuego() {
@@ -50,7 +51,7 @@ public class VentanaBorrarJuego extends Ventana {
     }
 
     private boolean borrar() {
-        if (this.nombreJuego.getText().length() == 0 ) {
+        if (this.nombreJuego.getText().length() == 0) {
             return false;
         } else {
             return true;
@@ -60,10 +61,16 @@ public class VentanaBorrarJuego extends Ventana {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.borrar) {
             if (borrar()) {
-                GestorArchivos.borrarJuego("src/main/java/modelo/datos/GameFinder.txt",nombreJuego.getText());
-                JOptionPane.showMessageDialog(this, "Juego eliminado correctamente", "Mensaje de confirmación",
-                        JOptionPane.INFORMATION_MESSAGE);
-                this.dispose();
+                if (GestorArchivos.revisarJuegos("src/main/java/modelo/datos/GameFinder.txt", nombreJuego.getText())) {
+                    GestorArchivos.borrarJuego("src/main/java/modelo/datos/GameFinder.txt", nombreJuego.getText());
+                    JOptionPane.showMessageDialog(this, "Juego eliminado correctamente", "Mensaje de confirmación",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(this, "El juego seleccionado, no existe", "Mensaje de confirmación",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    this.dispose();
+                }
             } else {
                 JOptionPane.showMessageDialog(this, "Complete todos los datos", "Mensaje de error", JOptionPane.ERROR_MESSAGE);
             }
